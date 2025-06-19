@@ -27,7 +27,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: DOCKER_USERNAME/ground-water:v1
+          tags: ${{ secrets.DOCKER_USERNAME }}/ground-water:v1
       
       - name: Deploy to Server via SSH
         run: |
@@ -57,7 +57,7 @@ jobs:
               --restart=unless-stopped \
               --name inayath-proj \
               -p 7894:3838 \
-            DOCKER_USERNAME/ground-water:v1
+            ${{ secrets.DOCKER_USERNAME }}/ground-water:v1
           '
 
       - name: Remove SSH key
