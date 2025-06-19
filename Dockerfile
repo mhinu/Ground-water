@@ -1,5 +1,4 @@
-FROM rocker/r-ver:4.4.1
-
+FROM rocker/r-ver:4.5.0
 RUN apt-get update -y && apt-get upgrade -y
 
 # Install system dependencies for R packages
